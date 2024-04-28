@@ -3,10 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginRegisterComponent } from './interfazes/componentes/login-register/login-register.component';
+import { NavbardComponent } from './interfazes/compartido/navbard/navbard.component';
+import { FooterComponent } from './interfazes/compartido/footer/footer.component';
+import { LandingComponent } from './interfazes/compartido/landing/landing.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginRegisterComponent,
+    NavbardComponent,
+    FooterComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,

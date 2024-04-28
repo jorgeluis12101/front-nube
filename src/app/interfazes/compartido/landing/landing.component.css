@@ -1,0 +1,115 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .main-content {
+    flex: 1;
+  }
+  
+  
+  #unique-container {
+    max-width: 820px;
+    /*Corregido: Eliminada la declaración duplicada de 'width';*/
+    height: 340px;
+    display: flex;
+    gap: 10px;
+    margin-inline: auto;
+  }
+  
+  /* Estilos individuales para cada tarjeta, usando el ID */
+  
+  #unique-card-1, #unique-card-2, #unique-card-3, #unique-card-4, #unique-card-5 {
+    min-width: 70px;
+    height: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    flex-grow: 1;
+    cursor: pointer;
+    position: relative;
+    transition: flex-grow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  /* Aplicamos los efectos de hover a cada tarjeta usando su ID */
+  
+  #unique-card-1:hover, #unique-card-2:hover, #unique-card-3:hover, #unique-card-4:hover, #unique-card-5:hover {
+    flex-grow: 7;
+  }
+  
+  /* Estilos para la imagen de fondo */
+  
+  #unique-bg-1, #unique-bg-2, #unique-bg-3, #unique-bg-4, #unique-bg-5 {
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.4);
+    z-index: -1;
+    transition: filter 0.35s ease;
+  }
+  
+  /* Estilos para cuando se hace hover en la tarjeta */
+  
+  #unique-card-1:hover > #unique-bg-1, #unique-card-2:hover > #unique-bg-2, #unique-card-3:hover > #unique-bg-3, #unique-card-4:hover > #unique-bg-4, #unique-card-5:hover > #unique-bg-5 {
+    filter: brightness(1);
+  }
+  
+  /* Estilos para el contenido de la tarjeta */
+  
+  #unique-content-1, #unique-content-2, #unique-content-3, #unique-content-4, #unique-content-5 {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 10px;
+    right: 10px;
+    bottom: 20px;
+    overflow: hidden;
+    transition: all 0.35s ease;
+    z-index: 10;
+  }
+  
+  /* Aplicamos los efectos de hover a cada contenido de la tarjeta */
+  
+  #unique-card-1:hover > #unique-content-1, #unique-card-2:hover > #unique-content-2, #unique-card-3:hover > #unique-content-3, #unique-card-4:hover > #unique-content-4, #unique-card-5:hover > #unique-content-5 {
+    left: 20px;
+    right: 20px;
+    bottom: 40px;
+  }
+  
+  
+  
+  
+  
+  
+  #Presentacion {
+    background-image: url("https://postimg.cc/1n3HrDRW");
+    background-color: rgba(0, 0, 0, 0.007);
+    background-size: cover;
+  }
+  
+  .card {
+    margin: 15px;
+    /*border-radius: 20px;*/
+  }
+  
+  #Mem {
+    background-color: rgba(60,196,205,0.15);
+    border-radius: 20px;
+  }
+  
+  .card {
+    background-color: rgba(60,193,202,0.5);
+  }
