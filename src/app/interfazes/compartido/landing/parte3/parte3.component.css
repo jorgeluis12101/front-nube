@@ -1,0 +1,10 @@
+#Mem {
+  background-color: rgba(60,196,205,0.15);
+  border-radius: 20px;
+  padding: auto;
+  margin-bottom: 30px;
+}
+
+.card {
+  background-color: rgba(60,193,202,0.5);
+}

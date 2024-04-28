@@ -179,12 +179,3 @@ display: none;
   color: #ffffff;
   box-shadow: 0 8px 24px 0 rgba(16,39,112,.2);
 }
-
-
-#transmenu.transparency {
-  background: #F1F1F1 !important;
-  box-shadow: none;
-  border-color: #F1F1F1 !important;
-  padding-top: 0.5px;
-  padding-bottom: 0.5px;
-}
