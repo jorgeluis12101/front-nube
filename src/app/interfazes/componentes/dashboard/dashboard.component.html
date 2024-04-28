@@ -1,30 +1,10 @@
-<div class="container">
-    <div class="col column-30">
-        <!-- Contenido de la columna 1 -->
-        <h2>Columna 1</h2>
-        <p>Contenido de la columna 1.</p>
-
-        <div class="row height d-flex justify-content-center align-items-center">
-
-            <div class="col-md-6">
-
-              <div class="form mt-4">
-                <i class="fa fa-search"></i>
-                <input type="text" class="form-control form-input" placeholder="Search anything...">
-                <span class="left-pan"><i class="fa fa-microphone"></i></span>
-              </div>
-              
-            </div>
-
-            <div class="boton_nota">
-                
-                <button class="new-note-button"> <i class="fas fa-sticky-note"></i> Nueva Nota</button>
-            </div>
-            
-          </div>
-
+<div class="container ">
+  <div class="row">
+    <div class="col-4 mt-4 mb-4">
+      <app-dash-1></app-dash-1>
     </div>
-    
-    <div class="column column-70">
-        <textarea id="mytextarea">Hello, World!</textarea>
+    <div class="col-8 mt-4 mb-4">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>

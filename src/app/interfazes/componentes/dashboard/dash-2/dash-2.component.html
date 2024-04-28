@@ -1,0 +1,45 @@
+<form (ngSubmit)="submit()">
+    <!-- Campo para el título de la nota -->
+    <div class="form-group">
+      <label for="noteTitle">Título de la Nota:</label>
+      <input
+        type="text"
+        class="form-control"
+        id="noteTitle"
+        [(ngModel)]="noteTitle"  
+        name="noteTitle"
+        placeholder="Introduce el título de la nota"
+        required
+      />
+    </div>
+  
+    <!-- Campo para el texto de la nota -->
+    <div class="form-group mt-3">
+      <label for="noteText">Texto de la Nota:</label>
+      <textarea
+        class="form-control"
+        id="noteText"
+        [(ngModel)]="noteText"
+        name="noteText"
+        rows="4"
+        placeholder="Escribe tu nota aquí..."
+        required
+      ></textarea>
+    </div>
+  
+    <!-- Campo para seleccionar y subir imágenes -->
+    <div class="form-group mt-3">
+      <label for="noteImage">Subir Imagen:</label>
+      <input
+        type="file"
+        class="form-control"
+        id="noteImage"
+        name="noteImage"
+        (change)="onImageChange($event)"  
+      />
+    </div>
+  
+    <!-- Botón para enviar la nota -->
+    <button class="btn btn-primary mt-3" type="submit">Crear Nota</button>
+  </form>
+  

@@ -1,0 +1,45 @@
+.vertical-navbar {
+  top: 0;
+  left: 0;
+  width: 250px; /* Ancho del navbar */
+  height: 100vh; /* Altura completa de la ventana */
+  background-color: #f8f9fa; /* Color de fondo */
+  padding: 20px; /* Espaciado interno */
+  display: flex;
+  flex-direction: column; /* Orientación vertical */
+  justify-content: flex-start; /* Alineación en la parte superior */
+  z-index: 1000; /* Para asegurarse de que esté por encima del contenido */
+}
+
+.navbar-content {
+  flex: 1; /* Ocupa todo el espacio disponible */
+}
+
+.navbar-header {
+  font-size: 24px; /* Tamaño de la fuente del título */
+  text-align: center; /* Centra el título */
+  margin-bottom: 20px; /* Espaciado inferior */
+}
+
+.navbar-search {
+  margin-bottom: 20px; /* Espaciado entre elementos */
+}
+
+.navbar-buttons {
+  margin-bottom: 20px; /* Espaciado entre elementos */
+}
+
+.navbar-links {
+  margin-top: auto; /* Alinea en la parte inferior */
+}
+
+.navbar-links a {
+  display: block; /* Hace que los enlaces ocupen toda la línea */
+  padding: 10px; /* Espaciado interno */
+  text-decoration: none; /* Sin subrayado */
+  color: #333; /* Color del texto */
+}
+
+.navbar-links a:hover {
+  background-color: #e9ecef; /* Color de fondo al pasar el mouse */
+}

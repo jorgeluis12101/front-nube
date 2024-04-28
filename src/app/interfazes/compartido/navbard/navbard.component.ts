@@ -22,4 +22,5 @@ export class NavbardComponent implements OnInit {
     this.authService.logout(); // Cierra sesión
     this.router.navigate(['/']); // Redirige a la página de inicio
   }
+  
 }
