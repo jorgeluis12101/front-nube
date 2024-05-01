@@ -16,6 +16,8 @@ import { Dash1Component } from './interfazes/componentes/dashboard/dash-1/dash-1
 import { Dash2Component } from './interfazes/componentes/dashboard/dash-2/dash-2.component';
 import { AuthInterceptor } from './services/services/auth-interceptor.service';
 import { ListaNotasComponent} from './interfazes/componentes/listar-notas/listar-notas.component';
+import { CommonModule } from '@angular/common';
+import { EditarNotaComponent } from './interfazes/componentes/listar-notas/editar-nota/editar-nota.component';
 
 @NgModule({
   declarations: [
@@ -30,13 +32,17 @@ import { ListaNotasComponent} from './interfazes/componentes/listar-notas/listar
     Parte3Component,
     Dash1Component,
     Dash2Component,
-    ListaNotasComponent
+    ListaNotasComponent,
+    EditarNotaComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    CommonModule
   ],
   providers: [
     {

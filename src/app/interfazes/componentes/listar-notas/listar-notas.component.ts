@@ -16,13 +16,48 @@ export class ListaNotasComponent implements OnInit {
 
   ngOnInit(): void {
     this.notaService.getNotasDelUsuarioAutenticado().subscribe(
-      (notas) => {
-        this.notas = notas; // Guarda la lista de notas
+      (notas: Nota[]) => {
+        this.notas = notas;
       },
-      (error) => {
+      (error: any) => {
         console.error('Error al obtener las notas:', error);
       }
     );
+  }
+
+  editarNota(nota: Nota): void {
+    Swal.fire({
+      title: 'Editar Nota',
+      html: `
+        <input id="titulo" class="swal2-input" placeholder="Título" value="${nota.titulo}">
+        <textarea id="descripcion" class="swal2-textarea" placeholder="Descripción">${nota.descripcion}</textarea>
+      `,
+      confirmButtonText: 'Actualizar',
+      focusConfirm: false,
+      preConfirm: () => {
+        const titulo = (document.getElementById('titulo') as HTMLInputElement).value;
+        const descripcion = (document.getElementById('descripcion') as HTMLTextAreaElement).value;
+        return { titulo, descripcion };
+      }
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.actualizarNota(nota.id!, result.value.titulo, result.value.descripcion);
+      }
+    });
+  }
+
+  actualizarNota(id: number, titulo: string, descripcion: string): void {
+    const notaActualizada: Nota = { id, titulo, descripcion }; // Asegúrate de incluir todos los campos necesarios aquí
+    this.notaService.actualizarNota(id, notaActualizada).subscribe({
+      next: () => {
+        Swal.fire('Actualizado', 'La nota ha sido actualizada con éxito', 'success');
+        this.ngOnInit(); // Recargar las notas
+      },
+      error: (e: any) => {
+        console.error('Error al actualizar la nota', e);
+        Swal.fire('Error', 'No se pudo actualizar la nota', 'error');
+      }
+    });
   }
 
   eliminarNota(id: number): void {
@@ -37,18 +72,14 @@ export class ListaNotasComponent implements OnInit {
       if (result.isConfirmed) {
         this.notaService.deleteNota(id).subscribe(
           () => {
-            this.notas = this.notas.filter((nota) => nota.id !== id); // Elimina la nota del array
+            this.notas = this.notas.filter((nota) => nota.id !== id);
             Swal.fire('Eliminado', 'La nota fue eliminada con éxito', 'success');
           },
-          (error) => {
+          (error: any) => {
             Swal.fire('Error', 'No se pudo eliminar la nota', 'error');
           }
         );
       }
     });
-  }
-
-  editarNota(id: number): void {
-    this.router.navigate(['/dashboard/editar-nota', id]); // Navega al componente de edición
   }
 }

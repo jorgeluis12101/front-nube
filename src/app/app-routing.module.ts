@@ -12,32 +12,28 @@ import { Parte3Component } from './interfazes/compartido/landing/parte3/parte3.c
 import { Dash1Component } from './interfazes/componentes/dashboard/dash-1/dash-1.component';
 import { Dash2Component } from './interfazes/componentes/dashboard/dash-2/dash-2.component';
 import { ListaNotasComponent } from './interfazes/componentes/listar-notas/listar-notas.component';
+import { EditarNotaComponent } from './interfazes/componentes/listar-notas/editar-nota/editar-nota.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: LandingComponent },
   { path: 'login-registro', component: LoginRegisterComponent },
-  { path: 'nav', component: NavbardComponent },
-  { path: 'footer', component: FooterComponent },
-  {
-    path: 'dashboard',
-    component: DashboardComponent,
-    canActivate: [AuthGuard],
-    children: [
-      { path: 'dash1', component: Dash1Component }, // Ruta hija para Dash1
-      { path: 'dash2', component: Dash2Component }, // Ruta hija para Dash2
-      { path: 'ListaNotas', component: ListaNotasComponent }
 
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard], 
+    children: [
+      { path: 'dash1', component: Dash1Component }, 
+      { path: 'dash2', component: Dash2Component },
+      { path: 'ListaNotas', component: ListaNotasComponent },
+      { path: 'editar-nota/:id', component: EditarNotaComponent }
     ]
   },
   { path: 'lan1', component: Parte1Component },
   { path: 'lan2', component: Parte2Component },
   { path: 'lan3', component: Parte3Component },
-
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

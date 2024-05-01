@@ -1,0 +1,19 @@
+<!-- src/app/components/editar-nota/editar-nota.component.html -->
+<div>
+  <h2>Editar Nota</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="titulo">Título</label>
+      <input type="text" id="titulo" [(ngModel)]="nota.titulo" name="titulo" required>
+    </div>
+    <div>
+      <label for="descripcion">Descripción</label>
+      <textarea id="descripcion" [(ngModel)]="nota.descripcion" name="descripcion" required></textarea>
+    </div>
+    <div>
+      <label for="imagen">Imagen (base64)</label>
+      <input type="text" id="imagen" [(ngModel)]="nota.imagenBase64" name="imagen">
+    </div>
+    <button type="submit">Actualizar Nota</button>
+  </form>
+</div>
