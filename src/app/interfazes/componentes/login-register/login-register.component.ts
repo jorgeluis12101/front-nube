@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../../services/auth.service';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2'; // Importa SweetAlert2
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login-register',
@@ -9,7 +9,7 @@ import Swal from 'sweetalert2'; // Importa SweetAlert2
   styleUrls: ['./login-register.component.css'],
 })
 export class LoginRegisterComponent {
-  isLoginMode = true; // Alterna entre modo de inicio de sesión y registro
+  LoginMode = true; // Alterna entre modo de inicio de sesión y registro
 
   loginData = {
     username: '',
