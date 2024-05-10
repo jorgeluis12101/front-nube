@@ -33,7 +33,7 @@ export class LoginRegisterComponent {
 
   // Alternar entre los modos de inicio de sesión y registro
   switchMode() {
-    this.isLoginMode = !this.isLoginMode;
+    this.LoginMode = !this.LoginMode;
   }
 
   onLogin() {

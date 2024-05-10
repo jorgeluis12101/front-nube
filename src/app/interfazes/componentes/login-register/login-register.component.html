@@ -13,7 +13,7 @@
             <div class="card-3d-wrapper">
               
               <!-- Formulario de Login -->
-              <div class="card-front" *ngIf="isLoginMode">
+              <div class="card-front" *ngIf="LoginMode">
                 <div class="center-wrap">
                   <div class="section text-center">
                     <h4 class="mb-4 pb-3">Iniciar Sesión</h4>
@@ -41,7 +41,7 @@
               </div>
 
               <!-- Formulario de Registro -->
-              <div class="card-back" *ngIf="!isLoginMode">
+              <div class="card-back" *ngIf="!LoginMode">
                 <div class="center-wrap">
                   <div class="section text-center">
                     <h4 class="mb-3 pb-3">Crear Cuenta</h4>
